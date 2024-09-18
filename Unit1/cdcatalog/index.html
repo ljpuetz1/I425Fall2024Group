@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="loadJSONDoc.js"></script>
+        <script>
+            window.onload = function()
+            {
+                //Get the JSON object defined the an external file cds.json
+                var catalogText = loadJSON("cds.json");
+                var catalogObj = JSON.parse(catalogText);
+
+                //Retrieve the value that is associated with the name "catalog"
+                var catalog = catalogObj.catalog;
+                var cds = catalog.CD; //an array of JSON objects for all CDs
+
+
+                //use a for loop to iterate all cds in the array and create an unordered list for each cd
+                for (let i = 0; i < cds.length; i++) {
+                    let title = cds[i].title;
+                    let artist = cds[i].artist;
+                    let country = cds[i].country;
+                    let company = cds[i].company;
+                    let price = cds[i].price;
+                    let year = cds[i].year;
+
+                    //create an unordered list for the cd
+                    let row = `<ul>
+                               <li class='title'>${title}</li>
+                               <li class='artist'>${artist}</li>
+                               <li class='country'>${country}</li>
+                               <li class='company'>${company}</li>
+                               <li class='price'>${price}</li>
+                               <li class='year'>${year}</li>
+                               </ul>`;
+
+                    //append the new cd to the current cds.
+                    document.getElementById('cd-table').innerHTML += row;
+                }
+            };
+
+
+        </script>
+        <title>CD CATALOG</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                text-align: center;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                font-size: 0;
+            }
+
+            li {
+                display: inline-block;
+                border-bottom: 1px solid #ccc;
+                padding: 6px;
+                text-align: left;
+                font-size: 16px;
+            }
+
+            .title {
+                width: 200px;
+            }
+
+            .artist {
+                width: 120px;
+            }
+            .country {
+                width: 80px;
+            }
+            .company {
+                width: 100px;
+            }
+
+            .price {
+                width: 50px;
+            }
+
+            .year {
+                width: 50px;
+            }
+
+            ul#header li {
+                border-top: 1px solid #ccc;
+                background-color: #CCC;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>CD CATALOG</h2>
+        <ul id="header">
+            <li class="title"><strong>Title</strong></li>
+            <li class="artist"><strong>Artist</strong></li>
+            <li class="country"><strong>Country</strong></li>
+            <li class="company"><strong>Company</strong></li>
+            <li class="price"><strong>Price</strong></li>
+            <li class="year"><strong>Year</strong></li>
+        </ul>
+        <div id="cd-table"></div>
+
+    </body>
+</html>
