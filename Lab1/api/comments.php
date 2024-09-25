@@ -6,6 +6,10 @@
  * Description:
  */
 require_once __DIR__ . '/../core/DB.php';
+$config = require_once __DIR__ . '/../core/config.php'; // Load the config file
+
+$dbInstance = new DB($config); // Pass config to DB class
+$dbConn = $dbInstance->connect();
 
 
 echo "This is where we can show our comments.";
