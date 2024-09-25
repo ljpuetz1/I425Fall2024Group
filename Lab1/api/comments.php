@@ -6,7 +6,7 @@
  * Description:
  */
 require_once __DIR__ . '/../core/DB.php';
-$config = require_once 'C:\xampp\htdocs\I425_Fall2024\I425Fall2024\Lab1\config.php';
+$config = require_once __DIR__ . '/../config.php'; 
 
 
 $dbInstance = new DB($config); // Pass config to DB class
