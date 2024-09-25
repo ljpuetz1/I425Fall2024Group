@@ -5,6 +5,8 @@
  * File: comments.php
  * Description:
  */
+require_once __DIR__ . '/../core/DB.php';
+
 
 echo "This is where we can show our comments.";
 $url = $_SERVER['REQUEST_URI'];
