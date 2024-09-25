@@ -6,6 +6,7 @@
  * Description:
  */
 $routes = [
+    //create routes to connect to the user or comment tables
     'users' => 'users.php',
     'comments' => 'comments.php'
 ];

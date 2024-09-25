@@ -8,6 +8,7 @@
 
 $db = [
     'host' => 'localhost',
+    //reuse the blog db for this assignment
     'database' => 'blog',
     'username' => 'phpuser',
     'password' => 'phpuser',
