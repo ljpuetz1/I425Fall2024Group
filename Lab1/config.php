@@ -14,3 +14,4 @@ $db = [
     'password' => 'phpuser',
     'port' => 3306
 ];
+return $db;
