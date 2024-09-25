@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: Logan Puetz
+ * Author: Logan Puetz, Ryan cook, Nathan ensley
  * Date: 9/25/2024
  * File: DB.php
  * Description:
