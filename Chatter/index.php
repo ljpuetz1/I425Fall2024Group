@@ -1,7 +1,14 @@
 <?php
-/**
- * Author: Logan Puetz
- * Date: 9/25/2024
- * File: index.php
- * Description:
- */
+require __DIR__ . '/vendor/autoload.php';
+
+$app = new \Slim\App();
+
+$app->get('/', function ($request, $response, $args) {
+    return $response->write("Hello I425!");
+});
+
+$app->get('/hello/{name}', function ($request, $response, $args) {
+    return $response->write("Hello ". $args['name']);
+});
+
+$app->run();
